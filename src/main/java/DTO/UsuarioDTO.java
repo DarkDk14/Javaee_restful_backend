@@ -1,40 +1,40 @@
-package entity;
+package DTO;
 
-import DTO.UsuarioDTO;
+import entity.UsuarioEntity;
 
-import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@Entity
-@Table ( name = "tb_usuario" )
-public class UsuarioEntity {
+public class UsuarioDTO {
 
-    @Id
-    @GeneratedValue ( strategy = GenerationType.IDENTITY )
     private Long usuarioId;
 
-    @Column ( nullable = false, length = 50 )
+    @NotNull
+    @Max ( 50 )
     private String nome;
 
-    @Column ( nullable = false, unique = true )
+    @NotNull
+    @Size ( min = 5, max = 20 )
     private String login;
 
-    @Column ( nullable = false )
+    @NotNull
+    @Min ( 10 )
+    @Email
     private String email;
 
-    @Column ( nullable = false )
+    @NotNull
+    @Size ( min = 4, max = 10 )
     private String senha;
 
-    @Column ( name = "data_de_nascimento" )
     private LocalDate dataNascimento;
 
-    public void UsuarioEntity (UsuarioDTO usuarioDTO) {
-        this.usuarioId = usuarioDTO.getUsuarioId();
-        this.nome = usuarioDTO.getNome();
-        this.login = usuarioDTO.getLogin();
-        this.email = usuarioDTO.getEmail();
-        this.senha = usuarioDTO.getSenha();
-        this.dataNascimento = LocalDate.from(usuarioDTO.getDataNascimento());
+    public UsuarioDTO ( UsuarioEntity usuarioEntity ) {
+        this.usuarioId = usuarioEntity.getUsuarioId();
+        this.nome = usuarioEntity.getNome();
+        this.login = usuarioEntity.getLogin();
+        this.email = usuarioEntity.getEmail();
+        this.senha = usuarioEntity.getSenha();
+        this.dataNascimento = usuarioEntity.getDataNascimento();
     }
 
     public Long getUsuarioId() {
