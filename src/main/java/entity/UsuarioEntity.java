@@ -28,7 +28,9 @@ public class UsuarioEntity {
     @Column ( name = "data_de_nascimento" )
     private LocalDate dataNascimento;
 
-    public void UsuarioEntity (UsuarioDTO usuarioDTO) {
+    public UsuarioEntity () {}
+
+    public UsuarioEntity (UsuarioDTO usuarioDTO) {
         this.usuarioId = usuarioDTO.getUsuarioId();
         this.nome = usuarioDTO.getNome();
         this.login = usuarioDTO.getLogin();
