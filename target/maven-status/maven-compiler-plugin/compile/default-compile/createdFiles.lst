@@ -1,0 +1,4 @@
+DAO\GenericDAO.class
+DTO\UsuarioDTO.class
+repository\UsuarioRepository.class
+entity\UsuarioEntity.class

@@ -7,6 +7,7 @@
           <option value="javax.servlet:javax.servlet-api" />
           <option value="jakarta.enterprise:jakarta.enterprise.cdi-api" />
           <option value="org.hibernate:hibernate-core" />
+          <option value="org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec" />
         </list>
       </option>
     </inspection_tool>
