@@ -13,7 +13,7 @@ public class UsuarioEntity {
     @GeneratedValue ( strategy = GenerationType.IDENTITY )
     private Long usuarioId;
 
-    @Column ( nullable = false, length = 50 )
+    @Column ( nullable = false)
     private String nome;
 
     @Column ( nullable = false, unique = true )
